@@ -17,39 +17,39 @@ h1{
 }
   
 .menu {
-    background: #212121;
-    height: 80px;
-    width: 100%;
-  }
+  background: #212121;
+  height: 80px;
+  width: 100%;
+}
   
-  .m-right {
-    float: right;
-    margin: 10px 40px 25px 10px;
-  }
+.m-right {
+  float: right;
+  margin: 10px 40px 25px 10px;
+}
   
-  .m-right a {
-    font-size: 18px;
-    text-decoration: none;
-    color: white;
-    margin-right: 30px;
-  }
+.m-right a {
+  font-size: 18px;
+  text-decoration: none;
+  color: white;
+  margin-right: 30px;
+}
   
-  .m-right a:hover {
-    color: #9e9e9e;
-  }
+.m-right a:hover {
+  color: #9e9e9e;
+}
   
-  .m-left{
-    float: left;
-    margin: 0px 0px 10px 20px; /*top right left bottom*/
-  }
-  .m-left a {
-    text-decoration: none;
-    color: white;
-  }
-  .m-left a:hover {
-    color: #9e9e9e;
-  }
-  .livraison {
+.m-left{
+  float: left;
+  margin: 0px 0px 10px 20px; /*top right left bottom*/
+}
+.m-left a {
+  text-decoration: none;
+  color: white;
+}
+.m-left a:hover {
+  color: #9e9e9e;
+}
+.livraison {
   font-weight: bold;
   color: #fafafa;
 }
@@ -67,8 +67,8 @@ h1{
   font-size: larger;
   font-weight: 900;
   }
-  .d-block w-100 img{
-    opacity: 0;
+.d-block w-100 img{
+  opacity: 0;
 }
 #btn_decouvrir {
   position: relative;
@@ -95,8 +95,20 @@ h1{
   transform: scale(0.98);
 }
 
-footer {
-  background: #212121;
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+footer{
+  background: #212121;;
+}
+ 
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 180px;
 }
 footer table {
   margin-bottom: 0;

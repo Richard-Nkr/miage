@@ -9,7 +9,7 @@ class ArticleController
 {
     public function show()
     {
-        require_once('src/views/articleView.php');
+        require_once('templates/articleView.php');
     }
 
     public function create()

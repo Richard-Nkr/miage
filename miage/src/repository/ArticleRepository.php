@@ -11,7 +11,8 @@ class ArticleRepository
         $database = new Database();
         $connection = $database->getConnection();
         $result = $connection->query('SELECT * FROM article');
-        $fetch = $result->fetchAll();  
+        
+        return $result->fetchAll();
     }
 }
 ?>

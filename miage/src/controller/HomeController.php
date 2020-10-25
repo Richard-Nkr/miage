@@ -2,12 +2,12 @@
 
 namespace App\controller;
 
-class DefaultController
+class HomeController
 {
 
-    public function home()
+    public function show()
     {
-        require('templates/home.php');
+        require_once('templates/home.php');
     }
 }
 ?>

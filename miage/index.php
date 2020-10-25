@@ -1,10 +1,19 @@
 <?php
 
-use App\config\Router;
-
 require_once "vendor/autoload.php";
 
-$router = new Router();
-$router->loadRoutes();
 
-?>
+if (isset($_GET['controller'])) {
+    $controller = $_GET['controller'];
+    if (isset($_GET['action'])) {
+        $action = $_GET['action'];
+    } else {
+        $action = 'show';
+    }
+} else {
+    $controller = 'home';
+    $action = 'show';
+}
+
+$router = new App\config\Router($controller,$action);
+$router->call();

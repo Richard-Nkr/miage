@@ -2,8 +2,6 @@
 
 namespace App\src\model;
 
-use App\src\config\Database;
-
 class Article
 {
     private $id;

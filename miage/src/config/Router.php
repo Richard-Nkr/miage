@@ -9,7 +9,7 @@ class Router
     const CONTROLLERS = array(
         'home' => ['show'],
         'client' => ['show'],
-        'post' => ['show']
+        'article' => ['show']
     );
 
     private $controller;

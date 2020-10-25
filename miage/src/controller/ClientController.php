@@ -8,7 +8,7 @@ class ClientController{
 
     public function show()
     {
-        require_once('src/views/articleView.php');
+        require_once('templates/articleView.php');
     }
 
     public function create()
@@ -26,7 +26,7 @@ class ClientController{
         
     }
 
-    public function delete()
+    public function deletshe()
     {
         
     }
