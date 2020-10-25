@@ -95,6 +95,26 @@ h1{
   transform: scale(0.98);
 }
 
+footer {
+  background: #212121;
+}
+footer table {
+  margin-bottom: 0;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+.th {
+  padding: 30px;
+  color: #F5F5F5;
+}
+
+.td {
+  padding-left: 50px;
+  text-align: left;
+  color: #EEEEEE;
+}
+
   
   
   

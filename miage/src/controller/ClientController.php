@@ -6,11 +6,9 @@ use App\repository\ClientRepository;
 
 class ClientController{
 
-    public function index()
+    public function show()
     {
-        $clientRepo = new ClientRepository;
-        $client = $clientRepo->getClients(); 
-        return var_dump($client);
+        require_once('src/views/articleView.php');
     }
 
     public function create()

@@ -7,12 +7,9 @@ use App\repository\ArticleRepository;
 
 class ArticleController
 {
-    public function index()
+    public function show()
     {
-        /*$articleRepo = new ArticleRepository;
-        $article = $articleRepo->getArticles();
-        return var_dump($article);*/
-        echo("Bonjour");
+        require_once('src/views/articleView.php');
     }
 
     public function create()

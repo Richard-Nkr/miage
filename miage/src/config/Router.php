@@ -1,30 +1,49 @@
 <?php
 
+
 namespace App\config;
 
-use App\controller\ClientController;
-use App\controller\ArticleController;
-use App\controller\DefaultController;
 
 class Router
 {
-    public function loadRoutes(){
-        try {
-            if (isset($_GET['action'])){
-                $action = $_GET['action'];
-                if (isset($_GET['page']) && $_GET['page']  === 'article') {
-                    $controller = new ArticleController;
-                } elseif (isset($_GET['page']) && $_GET['page'] === 'client') {
-                    $controller = new ClientController;
-                } else {
-                    $controller = new DefaultController;
-                }
-                $controller->{$action}();
+    const CONTROLLERS = array(
+        'home' => ['show'],
+        'client' => ['show'],
+        'post' => ['show']
+    );
+
+    private $controller;
+    private $action;
+
+    function __construct($controller, $action)
+    {
+        if (array_key_exists($controller, self::CONTROLLERS)) {
+            $this->controller = $controller;
+            if (in_array($action, self::CONTROLLERS[$controller])) {
+                $this->action = $action;
+            } else {
+                $this->action = self::CONTROLLERS[$controller][0];
             }
-           
-            
-        } catch (\Exception $exception) {
-            throw new \Exception('An error occured');
+        } else {
+            $this->controller = 'home';
+            $this->action = 'show';
         }
+    }
+
+    function call()
+    {
+        switch ($this->controller) {
+            case 'home':
+                $controller = new \App\controller\HomeController();
+                break;
+            case 'client':
+                $controller = new \App\controller\ClientController();
+                break;
+            case 'article':
+                $controller = new \App\controller\ArticleController();
+                break;
+        }
+
+        $controller->{$this->action}();
     }
 }
