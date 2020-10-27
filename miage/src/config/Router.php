@@ -3,47 +3,24 @@
 
 namespace App\config;
 
+use App\controller\ArticleController;
+use App\controller\ClientController;
+use App\controller\HomeController;
+
+
 
 class Router
 {
-    const CONTROLLERS = array(
-        'home' => ['show'],
-        'client' => ['show'],
-        'article' => ['show']
-    );
-
-    private $controller;
-    private $action;
-
-    function __construct($controller, $action)
+    public function loadRoutes()
     {
-        if (array_key_exists($controller, self::CONTROLLERS)) {
-            $this->controller = $controller;
-            if (in_array($action, self::CONTROLLERS[$controller])) {
-                $this->action = $action;
-            } else {
-                $this->action = self::CONTROLLERS[$controller][0];
-            }
+        $action = $_GET['action'];
+        if (isset($_GET['page']) && $_GET['page']  === 'article') {
+            $controller = new ArticleController;
+        } elseif (isset($_GET['page']) && $_GET['page'] === 'client') {
+            $controller = new ClientController;
         } else {
-            $this->controller = 'home';
-            $this->action = 'show';
+            $controller = new HomeController;
         }
-    }
-
-    function call()
-    {
-        switch ($this->controller) {
-            case 'home':
-                $controller = new \App\controller\HomeController();
-                break;
-            case 'client':
-                $controller = new \App\controller\ClientController();
-                break;
-            case 'article':
-                $controller = new \App\controller\ArticleController();
-                break;
-        }
-
-        $controller->{$this->action}();
+        $controller->{$action}();
     }
 }

@@ -8,7 +8,9 @@ class ClientController{
 
     public function show()
     {
-        require_once('templates/articleView.php');
+        $clientRepo = new ClientRepository;
+        $client = $clientRepo->getClients(); 
+        return var_dump($client);
     }
 
     public function create()

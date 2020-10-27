@@ -11,6 +11,6 @@ class ClientRepository
         $connection = $database->getConnection();
         $result = $connection->query('SELECT * FROM client');
         
-        return $result->fetchAll();  
+        return $result->fetchAll(\PDO::FETCH_ASSOC);
     }
 }
