@@ -88,6 +88,7 @@
         </table>
     </fieldset>
 </form>
+
 <?php
 $body = ob_get_clean();
 require('template.php');

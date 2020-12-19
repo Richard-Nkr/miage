@@ -11,7 +11,7 @@ use App\controller\HomeController;
 
 class Router
 {
-    public function loadRoutes()
+    public function loadRoutes() 
     {
         $action = $_GET['action'];
         if (isset($_GET['page']) && $_GET['page']  === 'article') {

@@ -15,7 +15,7 @@
                     <div class="carousel-caption d-none d-md-block">
 
                         <h2>
-                            <a href="sneakers.php"> <button id="btn_decouvrir" type=" button">Sell ​​your sneakers or items, at the price you want !</button> </a>
+                            <a href="?page=article&action=show"> <button id="btn_decouvrir" type=" button">Sell ​​your sneakers or items, at the price you want !</button> </a>
 
                         </h2>
                     </div>

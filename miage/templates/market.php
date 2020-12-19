@@ -26,8 +26,9 @@
         <?php } ?>
     </div>
 </div>
-        <br><br>
-        <?php
-        $body = ob_get_clean();
-        require('template.php');
-        ?>
+<br><br>
+
+<?php
+    $body = ob_get_clean();
+    require('template.php');
+?>

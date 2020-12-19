@@ -135,15 +135,22 @@ footer table {
 .card-img-top {
   margin-top: 5px;
   margin-bottom: 5px;;
-  margin-left: 5px;;
+  margin-left: 9%;
+  margin-right: 25%;
   width: 200px;
   height: auto;
   object-fit: cover;
 }
+.card{
+  width: 18rem;
+}
 .card-group{
   margin-bottom: 100px;
-  width: 400px;
+  width: 200px;
   height: auto;
+}
+.col-sm-4{
+  margin-left: -80px;
 }
 .box_title{
   margin-left: 42%;
