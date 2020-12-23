@@ -7,7 +7,6 @@ use App\model\Client;
 
 class ClientRepository
 {
-
     private $database;
 
     public function getClients()
@@ -27,25 +26,13 @@ class ClientRepository
         $db = $database->checkConnection();
 
         $result = $db->prepare('INSERT INTO client (name, firstname, mail, password, nickname)
-        VALUES (:name, :firstname, :mail, :password, :nickname,)');
+        VALUES (:name, :firstname, :mail, :password, :nickname)');
         $result->bindValue(':name', $client->getName(), \PDO::PARAM_STR);
         $result->bindValue(':firstname', $client->getFirstName(), \PDO::PARAM_STR);
         $result->bindValue(':mail', $client->getMail(), \PDO::PARAM_STR);
         $result->bindValue(':password', $client->getPassword(), \PDO::PARAM_STR);
         $result->bindValue(':nickname', $client->getNickname(), \PDO::PARAM_STR);
         $result->execute();
-    }
-
-    public function loginClient(Client $client)
-    {
-        $database = new Database;
-        $db = $database->checkConnection();
-        $query = $db->prepare("UPDATE client SET last_Connection_At = :lastConnect WHERE username = :username");
-        $data = [
-            'lastConnect' => date('Y-m-d H:i:s', strtotime(date('Y-m-d H:i:s'))),
-            'nickname' => $client->getNickname(),
-        ];
-        $query->execute($data);
     }
 
     public function checkPassword(Client $client)
