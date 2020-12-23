@@ -34,7 +34,6 @@ class ClientController{
             $client->setName($_POST['name']);
             $client->setNickname($_POST['nickname']);
             $client->setPassword($_POST['password']);
-            $client->setIsAdmin($_POST['admin']);
             $client->setMail($_POST['mail']);
 
             $this->clientRepo->createClient($client);
