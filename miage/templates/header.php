@@ -8,26 +8,14 @@
     </div>
     <div class="m-right">
       <a href="?page=article&action=show">Marketplace</a>
-      <a href="?page=client&action=create">Sneakers</a>
-      <a href="contact-nous.php">Contactez-nous</a>
-      <a href="panier.php">Panier</a>
-      <?php
-      if (!isset($_SESSION['username']) or empty($_SESSION['username'])) {
-      ?>
+      <a href="?page=article&action=create">Sell</a>
+      <a href="contact-nous.php">Contact</a>
+      <a href="panier.php">Basket</a>
+      <?php if (!isset($_SESSION['login'])) { ?>
         <a href="?page=client&action=read">Login</a>
-      <?php } else {
-      ?>
-        <a href="profil.php?id_membre=<?= $_SESSION['username']; ?>">Profil</a>
+      <?php } else { ?>
         <a href="?page=client&action=close">Logout</a>
-      <?php
-      } ?>
-      <?php
-      if (isset($_SESSION['isAdmin']) and $_SESSION['isAdmin'] == '1') {
-      ?>
-        <a href="?page=client&action=update">Administration</a>
-      <?php
-      }
-      ?>
+      <?php } ?>
 
 
 

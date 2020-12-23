@@ -39,7 +39,7 @@
                 </tr>
                 <tr>
                     <td colspan="4">
-                        <input type="submit" class="btn_decouvrir" value="Submit">
+                        <input type="submit" class="btn_form" value="Submit">
                     </td>
                 </tr>
                 <tr>

@@ -317,15 +317,41 @@ input[type="button"]:focus, textarea:focus, input[type="password"]:focus {
 }
 
 .register{
-  color: #f50c04;
+  color: #444343;
 }
 .register:hover{
   text-decoration: none;
-  color: #f35651;
+  color: #000000;
+  font-weight: bold;
 }
 
 .table_container{
   margin-left: 20%;
+}
+
+.btn_form {
+  position: relative;
+  /*positionne le bouton par rapport à la fenêtre du navigateur*/
+  font-size: 20px;
+  padding: 10px;
+  border: none;
+  background-color: #212121;
+  color: white;
+  border-radius: 10px;
+  box-shadow: 3px 4px 7px 2px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  outline: none;
+  transition: 0.2s;
+}
+
+.btn_form:hover{
+  box-shadow: 3px 4px 10px 2px rgba(0, 0, 0, 0.45);
+  transform: scale(1.01);
+}
+
+.btn_form:active{
+  box-shadow: 3px 4px 5px 2px rgba(0, 0, 0, 0.55);
+  transform: scale(0.98);
 }
 
 
