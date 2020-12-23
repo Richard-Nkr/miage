@@ -26,17 +26,16 @@ class ClientRepository
         $database = new Database;
         $db = $database->checkConnection();
 
-        $result = $db->prepare('INSERT INTO client (name, firstname, mail, password, nickname, isAdmin)
-        VALUES (:name, :firstname, :mail, :password, :nickname, :isAdmin)');
+        $result = $db->prepare('INSERT INTO client (name, firstname, mail, password, nickname)
+        VALUES (:name, :firstname, :mail, :password, :nickname,)');
         $result->bindValue(':name', $client->getName(), \PDO::PARAM_STR);
         $result->bindValue(':firstname', $client->getFirstName(), \PDO::PARAM_STR);
         $result->bindValue(':mail', $client->getMail(), \PDO::PARAM_STR);
         $result->bindValue(':password', $client->getPassword(), \PDO::PARAM_STR);
         $result->bindValue(':nickname', $client->getNickname(), \PDO::PARAM_STR);
-        $result->bindValue(':isAdmin', $client->getIsAdmin(), \PDO::PARAM_INT);
         $result->execute();
     }
-    
+
     public function loginClient(Client $client)
     {
         $database = new Database;
@@ -58,9 +57,7 @@ class ClientRepository
         $query->bindParam(':nickname', $_POST["nickname"]);
         $query->execute();
         $result = $query->fetch();
-        
+
         return password_verify($client->getPassword(), $result['password']);
     }
 }
-
-?>

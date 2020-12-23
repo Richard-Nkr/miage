@@ -3,55 +3,59 @@
 <?php ob_start(); ?>
 
 <body>
+<form action="?page=client&action=create" method="POST">
+    <fieldset class="fieldset_form">
+        <legend> Inscription </legend>
+        <?php
+        if (isset($erreur)) {
+            echo '<font color="#e53935">' . $erreur . "</font>";
+        }
+        ?>
+        <div class="table_container">
+            <table>
+                <tr>
+                    <td>
+                        <input type="text" class="form-control" placeholder="Enter name" name="name">
+                    </td>
+                    <td>
+                        <input type="text" class="form-control" placeholder="Enter firstname" name="firstname">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="text" class="form-control" placeholder="Enter mail" name="mail">
+                    </td>
+                    <td>
+                        <input type="text" class="form-control" placeholder="Enter nickname" name="nickname">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="password" class="form-control" placeholder="Enter password" name="password">
+                    </td>
+                    <td>
+                        <input type="password" class="form-control" placeholder="Check password" name="password2">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <input type="submit" class="btn_decouvrir" value="Submit">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+
+                    </td>
+                </tr>
+
+            </table>
+        </div>
+    </fieldset>
+</form>
 
     <div class="position">
 
-        <form action="?page=client&action=create" method="POST">
-            <fieldset class="fieldset_form">
-                <legend>REGISTER</legend>
-
-                <table class="form_table">
-                    <div id="obligatoire">(*) Required field</div>
-                    <div id="erreur_msg"></div>
-                    <tr>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td class="champs">What's your firstname ? * </td>
-                        <td><input type="text" id="firstname" name="firstname" placeholder="Firstname" /></td>
-                    </tr>
-                    <tr>
-                        <td class="champs">What's your last name ? </td>
-                        <td><input type="text" name="name" placeholder="Name" /></td>
-                    </tr>
-                    <tr>
-                        <td class="champs">What's your e-mail address ? *</td>
-                        <td><input type="mail" id="email" name="mail" placeholder="christophe@colomb.fr" /></td>
-                    </tr>
-                    <tr>
-                        <td class="champs">Choose a password</td>
-                        <td> <input type='password' id="mdp" name="password" placeholder="Mot de passe " /></td>
-                    </tr>
-                    <tr>
-                        <td class="champs">Choose a nickname</td>
-                        <td> <input  id="nickname" name="nickname" placeholder="nickname" /></td>
-                    </tr>
-                    <tr>
-                        <td class="champs">Admin</td>
-                        <td> <input type='password' id="mdp" name="admin" placeholder="0 or 1" /></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>
-                            <input type="submit" name="forminscription" value="Envoyer">
-                            <input type="reset" name="" value="Effacer">
-                        </td>
-                    </tr>
-                </table>
-            </fieldset>
-        </form>
-
-    </div>
+       
 </body>
 
 <?php

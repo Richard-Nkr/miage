@@ -15,7 +15,7 @@
                     <div class="carousel-caption d-none d-md-block">
 
                         <h2>
-                            <a href="?page=article&action=show"> <button id="btn_decouvrir" type=" button">Sell ​​your sneakers or items, at the price you want !</button> </a>
+                            <a href="?page=article&action=show"> <button class="btn_decouvrir" type=" button">Sell ​​your sneakers or items, at the price you want !</button> </a>
 
                         </h2>
                     </div>
@@ -24,7 +24,7 @@
                     <img src="assets/images/vendre.png" class="d-block w-100" alt="Vendre" width="753" height="582">
                     <div class="carousel-caption d-none d-md-block">
                         <h2>
-                            <a href="sneakers.php"> <button id="btn_decouvrir" type=" button">Find a deal !</button> </a>
+                            <a href="sneakers.php"> <button class="btn_decouvrir" type=" button">Find a deal !</button> </a>
 
                         </h2>
                     </div>
@@ -33,7 +33,7 @@
                     <img src="assets/images/argent.jpg" class="d-block w-100" alt="Argent" width="753" height="582">
                     <div class="carousel-caption d-none d-md-block">
                         <h2>
-                            <a href="sneakers.php"> <button id="btn_decouvrir" type=" button">Get your money !</button> </a>
+                            <a href="sneakers.php"> <button class="btn_decouvrir" type=" button">Get your money !</button> </a>
 
                         </h2>
                     </div>

@@ -4,7 +4,7 @@
 <div class="box_title">
     <h1>Marketplace</h1>
 </div>
-<h3 style="margin-left: 41%;">Latest added articles :</h3>
+<h3 style="margin-left: 41%;">Latest added items :</h3>
 
 <br><br>
 
