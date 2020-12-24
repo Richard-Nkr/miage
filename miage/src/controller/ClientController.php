@@ -42,7 +42,7 @@ class ClientController
 
             $this->clientRepo->createClient($client);
 
-            header('Location: index.php?page=article&action=show');
+            header('Location: index.php?page=client&action=read');
         }
 
         require_once 'templates/register.php';
@@ -61,8 +61,8 @@ class ClientController
 
             if (($this->clientRepo->checkPassword($client))) {
 
-                $_SESSION['login'] = $client->getNickname();
-                $_SESSION['isAdmin'] = $client->getIsAdmin();
+                $this->session->set('login', $client->getNickname());
+                $this->session->set('admin', $client->getIsAdmin());
 
                 header('Location: ?page=client&action=show');
             }
@@ -83,10 +83,16 @@ class ClientController
 
     public function profile()
     {
-        if (!($this->session->get('nickname')))
+        if (!($this->session->get('login')))
             header('Location: ?page=article&action=show');
 
-        require_once 'templates/profil.php';
+      
+        $client = new Client;
+        $client->setNickname($_SESSION['login']);
+        $userInfo = $this->clientRepo->viewProfile($client);
+        require_once 'templates/profile.php';
+
+       
     }
 
     public function close()

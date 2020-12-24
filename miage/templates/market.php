@@ -8,7 +8,7 @@
 
 <br><br>
 <h1><?php if (isset($_SESSION['login'])) {
-        echo ('bonjour' . $_SESSION['login']);
+        echo ('bonjour' . $_SESSION['admin']);
     } ?>
 </h1>
 

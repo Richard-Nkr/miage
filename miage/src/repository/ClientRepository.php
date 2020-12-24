@@ -18,6 +18,16 @@ class ClientRepository
         return $result->fetchAll(\PDO::FETCH_ASSOC);
     }
 
+    public function getClientByNickname($nickname)
+    {
+        $database = new Database;
+        $db = $database->checkConnection();
+        $result = $db->prepare('SELECT * FROM client WHERE nickname = :nickname');
+        $result->bindValue(':nickname', $nickname, \PDO::PARAM_STR);
+        $result->execute();
+        var_dump($result->fetchAll(\PDO::FETCH_ASSOC));
+    }
+
     public function createClient(Client $client)
     {
         $hash = password_hash($client->getPassword(), PASSWORD_DEFAULT);
@@ -46,5 +56,18 @@ class ClientRepository
         $result = $query->fetch();
 
         return password_verify($client->getPassword(), $result['password']);
+    }
+
+    public function viewProfile(Client $client)
+    {
+        $database = new Database;
+        $db = $database->checkConnection();
+
+        $getNickname = $client->getNickname();
+        $query = $db->prepare('SELECT * FROM client WHERE nickname = :nickname');
+        $query->bindParam(':nickname', $_SESSION["login"]);
+        $query->execute();
+       
+        return $userinfo = $query->fetch();
     }
 }

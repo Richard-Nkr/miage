@@ -9,6 +9,7 @@
     <div class="m-right">
       <a href="?page=article&action=show">Marketplace</a>
       <a href="?page=article&action=create">Sell</a>
+      <a href="?page=client&action=profile">Profile</a>
       <a href="contact-nous.php">Contact</a>
       <a href="panier.php">Basket</a>
       <?php if (!isset($_SESSION['login'])) { ?>
@@ -16,9 +17,6 @@
       <?php } else { ?>
         <a href="?page=client&action=close">Logout</a>
       <?php } ?>
-
-
-
     </div>
   </nav>
 </header>
