@@ -25,7 +25,7 @@ class ClientController
 
     public function show()
     {
-        $client = $this->clientRepo->getClients();
+        $clients = $this->clientRepo->getClients();
 
         require_once 'templates/clients.php';
     }
@@ -59,12 +59,17 @@ class ClientController
             $client->setNickname($_POST['nickname']);
             $client->setPassword($_POST['password']);
 
+            $clientInfo = $this->clientRepo->getClientByNickname($client->getNickname());
+            $id = $clientInfo[0]['id'];
+            $client->setId($id);
+
+
             if (($this->clientRepo->checkPassword($client))) {
 
                 $this->session->set('login', $client->getNickname());
-                $this->session->set('admin', $client->getIsAdmin());
+                $this->session->set('id_client', $client->getId());
 
-                header('Location: ?page=client&action=show');
+                header('Location: index.php?page=article&action=show');
             }
 
             $this->session->set('error', "Nickname or password incorrect");
@@ -75,6 +80,18 @@ class ClientController
 
     public function update()
     {
+        $client = new Client;
+        if (isset($_POST['newName']) and !empty($_POST['newName'])) {
+            $client->setName($_POST('newName'));
+        }
+        if (isset($_POST['newFirstname']) and !empty($_POST['newFirstName'])) {
+            $client->setFirstName($_POST('newFirstname'));
+        }
+        if (isset($_POST['newMail']) and !empty($_POST['newMail'])) {
+            $client->setMail($_POST('newMail'));
+        }
+
+        $this->clientRepo->updateProfile($client);
     }
 
     public function delete()
@@ -84,15 +101,11 @@ class ClientController
     public function profile()
     {
         if (!($this->session->get('login')))
-            header('Location: ?page=article&action=show');
-
-      
+            header('Location: ?page=client&action=read');
         $client = new Client;
         $client->setNickname($_SESSION['login']);
         $userInfo = $this->clientRepo->viewProfile($client);
         require_once 'templates/profile.php';
-
-       
     }
 
     public function close()

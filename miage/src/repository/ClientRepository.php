@@ -13,6 +13,7 @@ class ClientRepository
     {
         $database = new Database;
         $db = $database->checkConnection();
+
         $result = $db->query('SELECT * FROM client');
 
         return $result->fetchAll(\PDO::FETCH_ASSOC);
@@ -22,10 +23,22 @@ class ClientRepository
     {
         $database = new Database;
         $db = $database->checkConnection();
+
         $result = $db->prepare('SELECT * FROM client WHERE nickname = :nickname');
         $result->bindValue(':nickname', $nickname, \PDO::PARAM_STR);
         $result->execute();
-        var_dump($result->fetchAll(\PDO::FETCH_ASSOC));
+        return $result->fetchAll(\PDO::FETCH_ASSOC);
+    }
+
+    public function getClientById($id)
+    {
+        $database = new Database;
+        $db = $database->checkConnection();
+
+        $result = $db->prepare('SELECT * FROM client WHERE id = :id');
+        $result->bindValue(':id', $id, \PDO::PARAM_STR);
+        $result->execute();
+        return $result->fetchAll(\PDO::FETCH_ASSOC);
     }
 
     public function createClient(Client $client)
@@ -68,6 +81,11 @@ class ClientRepository
         $query->bindParam(':nickname', $_SESSION["login"]);
         $query->execute();
        
-        return $userinfo = $query->fetch();
+        return $query->fetch();
+    }
+
+    public function updateProfile(Client $client)
+    {
+
     }
 }

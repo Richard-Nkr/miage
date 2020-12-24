@@ -40,6 +40,10 @@ class Client
         return $this->isAdmin;
     }
 
+    public function setId($new_id){
+        $this->id = $new_id;
+    }
+
     public function setName($new_name){
         $this->name = $new_name;
     }

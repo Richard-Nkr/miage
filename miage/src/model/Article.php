@@ -14,6 +14,7 @@ class Article
     private $date_add;
     private $modele;
     private $price;
+    private $owner;
 
     public function getId(){
         return $this->id;
@@ -45,6 +46,9 @@ class Article
     public function getPrice(){
         return $this->price;
     }
+    public function getOwner(){
+        return $this->owner;
+    }
 
     public function setName($new_name){
         $this->name = $new_name;
@@ -72,6 +76,9 @@ class Article
     }
     public function setPrice($new_price){
         $this->price = $new_price;
+    }
+    public function setOwner($owner){
+        $this->owner = $owner;
     }
 
 

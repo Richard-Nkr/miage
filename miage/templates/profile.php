@@ -12,30 +12,32 @@
                     Profil de <?= $_SESSION['login'] ?>
 
                 </legend>
+                <br>
+                <div class="table_container">
+                    <table class="form_table">
+                        <tr>
+                            <td class="champs">Id client : <?php echo $userInfo['id']; ?></td>
+                        </tr>
+                        <tr>
+                            <td class="champs">Nom : <?php echo $userInfo['name']; ?></td>
+                        </tr>
+                        <tr>
+                            <td class="champs">Prenom : <?php echo $userInfo['firstname']; ?></td>
 
-                <table class="form_table">
-                    <div id="obligatoire">Informations</div>
+                        </tr>
+                        <tr>
+                            <td class="champs">Mail : <?php echo $userInfo['mail']; ?> </td>
 
-                    <tr>
-                        <td class="champs">Nom : <?php echo $userInfo['name']; ?></td>
-
-                    </tr>
-                    <tr>
-                        <td class="champs">Prenom : <?php echo $userInfo['firstname']; ?></td>
-
-                    </tr>
-                    <tr>
-                        <td class="champs">Mail : <?php echo $userInfo['mail']; ?> </td>
-
-                    </tr>
-                    <tr>
-                        <td>
-                            <a href="editionprofil.php"><button type="button" class="add_panier"> Editer mon profil</button></a>
-                        </td>
-                        <td>
-                            <a href="commande.php"><button type="button" class="add_panier"> Mes commandes</button></a>
-                        </td>
-                </table>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a href="?page=client&action=update"><button type="button" class="btn_form"> Edit profile</button></a>
+                            </td>
+                            <td>
+                                <a href="commande.php"><button type="button" class="btn_form"> Mes commandes</button></a>
+                            </td>
+                    </table>
+                </div>
             </fieldset>
         </form>
 

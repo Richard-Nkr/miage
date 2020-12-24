@@ -26,8 +26,9 @@ class ArticleController
 
     public function create()
     {
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_SESSION['login'])) {
             $article = new Article;
+            $article->setOwner($_SESSION['login']);
             $article->setType($_POST['type']);
             $article->setSize($_POST['size']);
             $article->setColor($_POST['color']);
@@ -45,11 +46,11 @@ class ArticleController
     public function read()
     {
         if ($_GET['id'] == null) {
-            header('Location: index.php?page=article&action=show');
+            header('Location: index.php?page=home&action=show');
         }
            
         $article = $this->articleRepo->getArticle($_GET['id']);
-        require('templates/market.php');
+        require('templates/viewArticle.php');
     }
     
 
@@ -59,5 +60,8 @@ class ArticleController
 
     public function delete()
     {
+    }
+
+    public function viewArticle(){
     }
 }

@@ -1,10 +1,43 @@
+<?php $title = 'SneakerShop - Clients'; ?>
+
 <?php ob_start(); ?>
-<div class="container">
-    <h1>Vous êtes bien connecté <b><?= $_SESSION['login']; ?></b></h1>
-    <h1>Admin<b><?php var_dump($_SESSION['admin']); ?></b></h1>
-    
-</div>
+
+<body>
+    <div class="position">
+
+        <form action='' method='GET'>
+            <fieldset class="fieldset_form">
+                <legend>
+
+                    Clients List
+
+                </legend>
+
+                <table class="form_table">
+                    <?php foreach ($clients as $client) { ?>
+                        <tr>
+                            <td class="champs">Nom : <?php echo $client['name']; ?></td>
+
+                        </tr>
+                        <tr>
+                            <td class="champs">Prenom : <?php echo $client['firstname']; ?></td>
+
+                        </tr>
+                        <tr style="border-bottom-style: dashed;">
+                            <td class="champs">Mail : <?php echo $client['mail']; ?> </td>
+
+                        </tr>
+                    <?php } ?>
+                </table>
+            </fieldset>
+        </form>
+
+    </div>
+    <?php
+    include('footer.php');
+    ?>
+</body>
 <?php
 $body = ob_get_clean();
-require "template.php"
+require('template.php');
 ?>

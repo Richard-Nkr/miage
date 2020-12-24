@@ -14,12 +14,12 @@
             <table class="form_login">
                 <tr>
                     <td rowspan="2">
-                        <input type="text" class="form-control" placeholder="Entrer nickname" name="nickname">
+                        <input type="text" class="form-control" placeholder="Enter nickname" name="nickname">
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <input type="password" class="form-control" placeholder="Entrer mot de passe" name="password">
+                        <input type="password" class="form-control" placeholder="Enter password" name="password">
                     </td>
                 </tr>
                 <tr>
