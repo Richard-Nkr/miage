@@ -9,7 +9,7 @@
             <fieldset class="fieldset_form">
                 <legend>
 
-                    Profil de <?= $_SESSION['nickname'] ?>
+                    Profil de <?= $_SESSION['login'] ?>
 
                 </legend>
 
@@ -17,15 +17,15 @@
                     <div id="obligatoire">Informations</div>
 
                     <tr>
-                        <td class="champs">Nom : <?php echo $userinfo['Nom']; ?></td>
+                        <td class="champs">Nom : <?php echo $userInfo['name']; ?></td>
 
                     </tr>
                     <tr>
-                        <td class="champs">Prenom : <?php echo $userinfo['Prenom']; ?></td>
+                        <td class="champs">Prenom : <?php echo $userInfo['firstname']; ?></td>
 
                     </tr>
                     <tr>
-                        <td class="champs">Mail : <?php echo $userinfo['Mail']; ?> </td>
+                        <td class="champs">Mail : <?php echo $userInfo['mail']; ?> </td>
 
                     </tr>
                     <tr>

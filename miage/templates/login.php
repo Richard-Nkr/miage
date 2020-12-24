@@ -24,12 +24,12 @@
                 </tr>
                 <tr>
                     <td colspan="4">
-                        <input type="submit" class="btn_form" value="Valider">
+                        <input type="submit" class="btn_form" value="Submit">
                     </td>
                 </tr>
                 <tr>
                     <td colspan="4">
-                        <p style="color:black;" ;>Pas de compte ? - <a href="?page=client&action=create" class="register">S'inscrire ici</a></p>
+                        <p style="color:black;" ;>No account ? - <a href="?page=client&action=create" class="register">Register here</a></p>
                     </td>
                 </tr>
 
