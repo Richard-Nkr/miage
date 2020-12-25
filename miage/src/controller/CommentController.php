@@ -18,10 +18,16 @@ class CommentController
         }
     }
 
-    public function show()
+    public function getClientInfo($comments){
+        foreach ($comments as $comment) {
+            $commentRepo = new CommentRepository;
+            $clientInfo = $commentRepo->getClientById($comment['id_client']);
+        }
+    }
+
+    public function read()
     {
-        $comments = $this->commentRepo->getComments($_GET['id']);
-        require('templates/commentArticle.php');
+
     }
 
     public function create()
