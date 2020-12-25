@@ -12,7 +12,7 @@ class CommentRepository
         $database = new Database;
         $db = $database->checkConnection();
        
-        $result = $db->prepare("SELECT * FROM comment WHERE id_article = :id_article");
+        $result = $db->prepare("SELECT * FROM comment WHERE id_article = :id_article ORDER BY id DESC");
         $result->bindValue(':id_article', $id_article, \PDO::PARAM_INT);
         $result->execute();
         
